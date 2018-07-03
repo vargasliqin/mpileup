@@ -14,7 +14,7 @@ my ($inputfile, $bamfile, $outputfile) = ($ARGV[0], $ARGV[1], $ARGV[2]);
 #GLOBAL VARIABLES - PLEASE MODIFY THESE
 
 my $minbasequal = 20; # MINIMUM BASE QUALITY SCORE
-my $minmapqual = 1; # MINIMUM READ MAPPING QUALITY SCORE
+my $minmapqual = 255; # MINIMUM READ MAPPING QUALITY SCORE. 255 FOR UNIQUE MAPPING WITH STAR
 my $sampath = "samtools"; #PATH TO THE SAMTOOLS EXECUTABLE
 my $genomepath = "Homo_sapiens_assembly38_noALT_noHLA_noDecoy.fasta"; #PATH TO REFERENCE GENOME
 
