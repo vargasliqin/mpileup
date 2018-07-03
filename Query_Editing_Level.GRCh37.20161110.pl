@@ -16,7 +16,7 @@ my ($inputfile, $bamfile, $outputfile) = ($ARGV[0], $ARGV[1], $ARGV[2]);
 my $minbasequal = 20; # MINIMUM BASE QUALITY SCORE
 my $minmapqual = 1; # MINIMUM READ MAPPING QUALITY SCORE
 my $sampath = "samtools"; #PATH TO THE SAMTOOLS EXECUTABLE
-my $genomepath = "chr2.fa"; #PATH TO REFERENCE GENOME
+my $genomepath = "Homo_sapiens_assembly38_noALT_noHLA_noDecoy.fasta"; #PATH TO REFERENCE GENOME
 
 my $offset = 33; #BASE QUALITY SCORE OFFSET - 33 FOR SANGER SCALE, 64 FOR ILLUMINA SCALE
 
