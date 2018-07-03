@@ -21,8 +21,8 @@ ENV PERLLIB /code
 WORKDIR /code
 ADD . /code
 
-RUN wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/chromosomes/chr2.fa.gz && \
-    gunzip chr2.fa.gz && \
+# Download GRCh38 w/o ALT, HLA, and Decoy contigs RNA-seq mapping
+RUN wget https://personal.broadinstitute.org/francois/resources/Homo_sapiens_assembly38_noALT_noHLA_noDecoy.fasta \
     chmod u+x Query_Editing_Level.GRCh37.20161110.pl
 
 ENTRYPOINT ["perl","/code/Query_Editing_Level.GRCh37.20161110.pl"]
