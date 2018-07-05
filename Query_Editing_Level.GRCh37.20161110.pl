@@ -7,9 +7,9 @@ use strict;
 require "parse_pileup_query.pl"; #NEED PARSE PILEUP LIBRARY
 
 if (@ARGV != 3) {
-	die "need to provide 3 input:Edit Site list, INDEXED BAM alignment file and output file name\n";
+	die "need to provide 2 input:INDEXED BAM alignment file and output file name\n";
 }
-my ($inputfile, $bamfile, $outputfile) = ($ARGV[0], $ARGV[1], $ARGV[2]);
+my ($bamfile, $outputfile) = ($ARGV[0], $ARGV[1]);
 
 #GLOBAL VARIABLES - PLEASE MODIFY THESE
 
@@ -17,6 +17,7 @@ my $minbasequal = 20; # MINIMUM BASE QUALITY SCORE
 my $minmapqual = 255; # MINIMUM READ MAPPING QUALITY SCORE. 255 FOR UNIQUE MAPPING WITH STAR
 my $sampath = "samtools"; #PATH TO THE SAMTOOLS EXECUTABLE
 my $genomepath = "Homo_sapiens_assembly38_noALT_noHLA_noDecoy.fasta"; #PATH TO REFERENCE GENOME
+my $inputfile = "All.AG.stranded.annovar.Hg38_multianno.AnnoAlu.AnnoRep.bed"; #PATH TO EDITING SITE LIST
 
 my $offset = 33; #BASE QUALITY SCORE OFFSET - 33 FOR SANGER SCALE, 64 FOR ILLUMINA SCALE
 
