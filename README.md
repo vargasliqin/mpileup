@@ -44,7 +44,7 @@ Let's now try running the script
 
 ```bash
 cd /code
-perl Query_Editing_Level.GRCh37.20161110.pl /tmp/data/test.list.chr2.txt /tmp/data/test.bam /tmp/data/test.out
+perl Query_Editing_Level.GRCh37.20161110.pl /tmp/data/test.bam /tmp/data/test.out
 ```
 
 Note that the reference genome is an example, `chr2.fa` in the same directory as the script in the
@@ -61,14 +61,14 @@ you will see it. The same command above would look like this:
 
 ```bash
 $ docker run -it -v $PWD/data:/tmp/data vanessa/mpileup
-need to provide 3 input:Edit Site list, INDEXED BAM alignment file and output file name
+need to provide 2 input: INDEXED BAM alignment file and output file name
 ```
 
 And so then you can provide your data to get it running again! Note that we are providing paths to `/tmp/data`
 where the container has bound to our `$PWD/data` (location on the host)
 
 ```bash
-docker run -it -v $PWD/data:/tmp/data vanessa/mpileup /tmp/data/test.list.chr2.txt /tmp/data/test.bam /tmp/data/test.out
+docker run -it -v $PWD/data:/tmp/data vanessa/mpileup /tmp/data/test.bam /tmp/data/test.out
 [mpileup] 1 samples in 1 input files
 ...
 ```
