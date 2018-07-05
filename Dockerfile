@@ -23,6 +23,7 @@ ADD . /code
 
 # Download GRCh38 w/o ALT, HLA, and Decoy contigs RNA-seq mapping
 RUN wget -nv https://personal.broadinstitute.org/francois/resources/Homo_sapiens_assembly38_noALT_noHLA_noDecoy.fasta && \
+    gunzip All.AG.stranded.annovar.Hg38_multianno.AnnoAlu.AnnoRep.bed.gz && \
     chmod u+x Query_Editing_Level.GRCh37.20161110.pl
 
 ENTRYPOINT ["perl","/code/Query_Editing_Level.GRCh37.20161110.pl"]
