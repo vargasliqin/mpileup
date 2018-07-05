@@ -42,7 +42,7 @@ system("rm $piletemp");
 
 open (my $INPUT , "<", $inputfile) or die "error opening inputfile: $!\n";
 open (my $OUTPUT, ">", $outputfile);
-print $OUTPUT "#chrom\tposition\tstrand\tcoverage\teditedreads\teditlevel\n";
+print $OUTPUT "#chrom\tposition\tcoverage\teditedreads\teditlevel\n";
 
 while (<$INPUT>) { #READ IN LIST OF KNOWN EDITED SITES AND QUERY EDITING STATUS
 	chomp;
