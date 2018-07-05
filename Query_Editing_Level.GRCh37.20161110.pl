@@ -23,7 +23,7 @@ my $offset = 33; #BASE QUALITY SCORE OFFSET - 33 FOR SANGER SCALE, 64 FOR ILLUMI
 ##END GLOBAL VARIABLES
 
 my $bedtemp = join '', $outputfile, '.bed';
-system("awk \'\$1\!\=\"chromosome\"\{print \$1\"\t\"\$2-1\"\t\"\$2\}\' $inputfile \> $bedtemp");
+system("awk \'\$1\!\=\"chromosome\"\{print \$1\"\t\"\$2\"\t\"\$3\}\' $inputfile \> $bedtemp");
 my $piletemp = join '', $outputfile, '.pileup';
 system("$sampath mpileup -A -B -d 1000000 -q $minmapqual -Q $minbasequal -f $genomepath -l $bedtemp $bamfile \> $piletemp");
 
@@ -42,7 +42,7 @@ system("rm $piletemp");
 
 open (my $INPUT , "<", $inputfile) or die "error opening inputfile: $!\n";
 open (my $OUTPUT, ">", $outputfile);
-print $OUTPUT "#chrom\tposition\tgene\tstrand\tannot1\tannot2\tcoverage\teditedreads\teditlevel\n";
+print $OUTPUT "#chrom\tposition\tstrand\tcoverage\teditedreads\teditlevel\n";
 
 while (<$INPUT>) { #READ IN LIST OF KNOWN EDITED SITES AND QUERY EDITING STATUS
 	chomp;
@@ -50,7 +50,7 @@ while (<$INPUT>) { #READ IN LIST OF KNOWN EDITED SITES AND QUERY EDITING STATUS
 	next if ($fields[0] eq 'chromosome');
 	my ($chr, $position) = ($fields[0], $fields[1]);
 	my $location = join '_', $chr, $position;
-	my ($gene, $strand, $annot1, $annot2) = ($fields[2], $fields[3],$fields[4], $fields[5]);
+	my ($strand) = ($fields[5]);
 
 	if ($sitehash{$location}) { #PRINT OUT RESULT
 		my ($refcount, $ccount, $gcount) = split(/\,/,$sitehash{$location});
