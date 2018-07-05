@@ -22,7 +22,7 @@ WORKDIR /code
 ADD . /code
 
 # Download GRCh38 w/o ALT, HLA, and Decoy contigs RNA-seq mapping
-RUN wget https://personal.broadinstitute.org/francois/resources/Homo_sapiens_assembly38_noALT_noHLA_noDecoy.fasta && \
+RUN wget -nv https://personal.broadinstitute.org/francois/resources/Homo_sapiens_assembly38_noALT_noHLA_noDecoy.fasta && \
     chmod u+x Query_Editing_Level.GRCh37.20161110.pl
 
 ENTRYPOINT ["perl","/code/Query_Editing_Level.GRCh37.20161110.pl"]
