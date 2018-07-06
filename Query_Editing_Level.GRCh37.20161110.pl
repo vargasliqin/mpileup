@@ -6,7 +6,7 @@ use warnings;
 use strict;
 require "parse_pileup_query.pl"; #NEED PARSE PILEUP LIBRARY
 
-if (@ARGV != 3) {
+if (@ARGV != 2) {
 	die "need to provide 2 input:INDEXED BAM alignment file and output file name\n";
 }
 my ($bamfile, $outputfile) = ($ARGV[0], $ARGV[1]);
