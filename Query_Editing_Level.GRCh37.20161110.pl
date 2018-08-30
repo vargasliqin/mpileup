@@ -14,7 +14,7 @@ my ($bamfile, $outputfile) = ($ARGV[0], $ARGV[1]);
 #GLOBAL VARIABLES - PLEASE MODIFY THESE
 
 my $minbasequal = 20; # MINIMUM BASE QUALITY SCORE
-my $minmapqual = 1; # MINIMUM READ MAPPING QUALITY SCORE. 255 FOR UNIQUE MAPPING WITH STAR
+my $minmapqual = 1; # MINIMUM READ MAPPING QUALITY SCORE. 255 FOR UNIQUE MAPPING WITH STAR. ≥1 for reads mapped to less than 10 loci
 my $sampath = "samtools"; #PATH TO THE SAMTOOLS EXECUTABLE
 my $genomepath = "Homo_sapiens_assembly38_noALT_noHLA_noDecoy.fasta"; #PATH TO REFERENCE GENOME
 my $inputfile = "All.AG.stranded.annovar.Hg38_multianno.AnnoAlu.AnnoRep.bed"; #PATH TO EDITING SITE LIST
